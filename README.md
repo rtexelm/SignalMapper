@@ -31,6 +31,7 @@ In addition, this project will include:
 This project will be implemented with the following technologies
 
 - A D3 library to render the data visuals
+  - <https://d3js.org/>
 - The radioreference.com API to retrieve radio data
   - <https://wiki.radioreference.com/index.php/API>
 - The callook.info API to retrieve radio data
