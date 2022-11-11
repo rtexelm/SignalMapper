@@ -59,11 +59,11 @@ This project will be implemented with the following technologies
 ### Tuesday
 
 - Have a working version of data retrieval and display
-- Continue styling and animation/interaction
+- Continue styling and animations/interactions
 
 ### Wednesday
 
-- Visually olish as much as possible to make sure the site is presentable
+- Visually polish as much as possible to make sure the site is presentable
 
 ### Thursday Morning
 
