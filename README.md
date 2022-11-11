@@ -13,7 +13,7 @@ In SignalMapper, user will be able to:
 3. The map will be interactive
 4. Display a list of the signals in the area
 5. Display relevant data related to the signals in several visual styles
-6. Include animations for different interaction events on the visuals
+6. Include animations for interaction events
 
 In addition, this project will include:
 
