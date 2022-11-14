@@ -18,8 +18,10 @@ class DataRender {
     const zipcode = zipcodeField.value;
     zipcodeField.value = "";
     console.log(zipcode)
+
     const callsigns = this.getSigns(Data, zipcode)
     console.log(callsigns)
+    this.populateList(callsigns)
     // for (let [k, v] of formData.entries()) {
     //   console.log([k, v]);
     // }
@@ -28,10 +30,19 @@ class DataRender {
   getSigns(data, key) {
     let signs = []
     let licenses = data[key]
-    Object.keys(licenses).forEach(license => {
+    licenses.forEach( license => {
       signs.push(license.cs);
     })
     return signs
+  }
+
+  populateList(arr) {
+    let list = document.getElementById("csList")
+    arr.forEach( sign => {
+      let csItem = document.createElement("li");
+      csItem.innerHTML = sign;
+      list.appendChild(csItem);
+    })
   }
 
 
