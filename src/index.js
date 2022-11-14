@@ -10,8 +10,4 @@ document.addEventListener("DOMContentLoaded", () => {
   const zipButton = document.getElementById("zipButton");
   new DataRender(zipButton, zipForm);
 
-
-  // fetch('https://callook.info/KD2QOQ/json')
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data));
 });

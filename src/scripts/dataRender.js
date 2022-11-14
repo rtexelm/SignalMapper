@@ -2,6 +2,8 @@
 
 import Data from "../assets/NY_callsigns.json"
 
+import Fetcher from "./fetcher.js"
+
 class DataRender {
   constructor (button, form) {
     this.button = button;
@@ -12,7 +14,7 @@ class DataRender {
 
   handleClick(e) {
     e.preventDefault();
-    console.log("clicccccked");
+    // console.log("clicccccked");
     const formData = new FormData(this.form);
     const zipcodeField = document.getElementById("zipcode");
     const zipcode = zipcodeField.value;
@@ -20,7 +22,9 @@ class DataRender {
     console.log(zipcode)
 
     const callsigns = this.getSigns(Data, zipcode)
+
     console.log(callsigns)
+
     this.populateList(callsigns)
     // for (let [k, v] of formData.entries()) {
     //   console.log([k, v]);
@@ -38,14 +42,13 @@ class DataRender {
 
   populateList(arr) {
     let list = document.getElementById("csList")
+    list.innerHTML = "";
     arr.forEach( sign => {
       let csItem = document.createElement("li");
       csItem.innerHTML = sign;
       list.appendChild(csItem);
     })
   }
-
-
 
   // handleForm(e) {
   //   console.log("formdata begins");

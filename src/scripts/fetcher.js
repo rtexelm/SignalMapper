@@ -1,20 +1,31 @@
 /*
 Get a set of data from a key in NY_full_json
 Make a request to the API for one of the callsigns
-Get user input for a Zip Code
 */
-// import Data from "assets/NY_callsigns.json"
+
+// fetch('https://callook.info/KD2QOQ/json')
+//   .then((response) => response.json())
+//   .then((data) => console.log(data));
 
 class Fetcher {
-  constructor (data, key) {
-    this.data = data
-    this.key = key
+  constructor (callsign) {
+    this.callsign = callsign
+    this.callsign.addEventListener("click", this.getLicenseData.bind(this))
   }
 
-  getSigns(data, key) {
-    
-    
-    
+  getLicenseData (callsign) {
+    fetch(`https://callook.info/${callsign}/json`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw response;
+        }
+      })
+      .then(check => console.log(check))
+      .catch(error => console.error(error))
   }
 
 }
+
+export default Fetcher
