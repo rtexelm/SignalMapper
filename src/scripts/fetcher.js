@@ -1,33 +1,66 @@
 /*
-Get a set of data from a key in NY_full_json
+On user click of list item
 Make a request to the API for one of the callsigns
 */
-
-// fetch('https://callook.info/KD2QOQ/json')
-//   .then((response) => response.json())
-//   .then((data) => console.log(data));
-
 class Fetcher {
   constructor (callsign) {
-    this.callsign = callsign
-    this.csString = this.callsign.innerHTML.toLowerCase()
-    
-    this.callsign.addEventListener("click", this.getLicenseData.bind(this))
+    // debugger;
+    this.callsign = callsign;
+    this.csString = this.callsign.innerHTML.toLowerCase();
+    this.callsign.addEventListener("click", this.getLicenseData.bind(this));
+    this.license;
   }
 
   getLicenseData (e) {
     console.log(this.csString)
+    // let license;
     fetch(`https://callook.info/${this.csString}/json`)
       .then(res => {
         if (res.ok) {
           return res.json();
         } else {
-          throw response;
+          throw res;
         }
       })
-      .then(check => console.log(check))
-      .catch(error => console.error(error))
+      .then(data => {
+        console.log(data);
+        // debugger;
+        this.setLicense(data);
+        this.createDataSection(this.license);
+      })
+      .catch(error => console.error(error));
+    
   }
+
+  setLicense (obj) {
+    this.license = obj
+    console.log(this.license.location)
+    // return this.license
+  }
+
+  createDataSection (obj) {
+    let list = document.getElementById("licenseData")
+    list.innerHTML = "";
+    let dataItem = document.createElement("li");
+
+    dataItem.innerHTML = JSON.stringify(obj);
+    list.appendChild(dataItem);
+
+    // for (const property in obj) {
+
+    //   let dataItem = document.createElement("li");
+
+    //   if (obj[property] instanceof Object) {
+        // let subList = document.createElement("ul");
+        // let subItem = document.createElement("li");
+        
+    //   }
+    //   dataItem.innerHTML = `${property}: ${obj[property]}`;
+
+    //   list.appendChild(dataItem);
+    // }
+  }
+
 
 }
 
