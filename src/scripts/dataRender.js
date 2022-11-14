@@ -15,7 +15,7 @@ class DataRender {
   handleClick(e) {
     e.preventDefault();
     // console.log("clicccccked");
-    const formData = new FormData(this.form);
+    // const formData = new FormData(this.form);
     const zipcodeField = document.getElementById("zipcode");
     const zipcode = zipcodeField.value;
     zipcodeField.value = "";
@@ -46,6 +46,7 @@ class DataRender {
     arr.forEach( sign => {
       let csItem = document.createElement("li");
       csItem.innerHTML = sign;
+      new Fetcher(csItem)
       list.appendChild(csItem);
     })
   }

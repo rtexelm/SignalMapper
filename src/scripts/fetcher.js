@@ -10,11 +10,14 @@ Make a request to the API for one of the callsigns
 class Fetcher {
   constructor (callsign) {
     this.callsign = callsign
+    this.csString = this.callsign.innerHTML.toLowerCase()
+    
     this.callsign.addEventListener("click", this.getLicenseData.bind(this))
   }
 
-  getLicenseData (callsign) {
-    fetch(`https://callook.info/${callsign}/json`)
+  getLicenseData (e) {
+    console.log(this.csString)
+    fetch(`https://callook.info/${this.csString}/json`)
       .then(res => {
         if (res.ok) {
           return res.json();
