@@ -2,6 +2,13 @@
 On user click of list item
 Make a request to the API for one of the callsigns
 */
+
+function titelize(str) {
+  return str.toLowerCase().split(' ').map(function (word) {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
+}
+
 class Fetcher {
   constructor (callsign) {
     // debugger;
@@ -48,10 +55,10 @@ class Fetcher {
 
       if (obj[property] instanceof Object) {
         console.log("Unpacking Object")
-        dataItem.innerHTML = `${property}: `
+        dataItem.innerHTML = `${titleize(property)}: `
         this.objLister(obj[property], dataItem)
       } else {
-        dataItem.innerHTML = `${property}: ${obj[property]}`;
+        dataItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
         }
       list.appendChild(dataItem);
     }
@@ -59,16 +66,22 @@ class Fetcher {
 
   objLister (obj, node) {
     let subList = document.createElement("ul");
-    // subList.innerHTML = "";
+
     for (const property in obj) {
       let subItem = document.createElement("li");
-      subItem.innerHTML = `${property}: ${obj[property]}`;
+      subItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
       subList.appendChild(subItem);
     }
     node.append(subList);
   }
 
 
+}
+
+function titleize(str) {
+  return str.toLowerCase().split(' ').map((word) => {
+    return (word.charAt(0).toUpperCase() + word.slice(1));
+  }).join(' ');
 }
 
 export default Fetcher
