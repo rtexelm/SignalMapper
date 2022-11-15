@@ -1,14 +1,30 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+body {
+  background-color: rgb(103, 82, 59);
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+}
+
 section {
-  font-size: 50%;
-  float: right;
-  position: absolute;
-  top: 125px;
-  right: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+section #licenseData {
+  font-size: 90%;
+  margin: 3em;
 }
 
 #csList li {
   cursor: pointer;
+}
+
+#map {
+  width: 600px;
+  height: 400px;
+  margin: 3em;
 }

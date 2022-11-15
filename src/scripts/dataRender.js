@@ -4,8 +4,7 @@ import Data from "../assets/NY_callsigns.json"
 import Fetcher from "./fetcher.js"
 
 class DataRender {
-  constructor (button, form) {
-    this.button = button;
+  constructor (form) {
     this.form = form;
     this.form.addEventListener("submit", this.handleClick.bind(this));
     // this.form.addEventListener("formdata", this.handleForm.bind(this));

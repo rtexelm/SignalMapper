@@ -3,11 +3,7 @@ On user click of list item
 Make a request to the API for one of the callsigns
 */
 
-function titelize(str) {
-  return str.toLowerCase().split(' ').map(function (word) {
-    return (word.charAt(0).toUpperCase() + word.slice(1));
-  }).join(' ');
-}
+import map from "./map"
 
 class Fetcher {
   constructor (callsign) {
@@ -34,9 +30,11 @@ class Fetcher {
         // debugger;
         this.setLicense(data);
         this.createDataSection(this.license);
+        this.snatchCoordz(this.license)
+        L.marker([40.742, -74.006]).addTo(map);
       })
       .catch(error => console.error(error));
-    
+      
   }
 
   setLicense (obj) {
@@ -75,6 +73,11 @@ class Fetcher {
     node.append(subList);
   }
 
+  snatchCoordz (pojo) {
+    let lat = pojo.location.latitude
+    let long = pojo.location.longitude
+    console.log([lat,long])
+  }
 
 }
 

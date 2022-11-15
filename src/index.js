@@ -1,6 +1,7 @@
 import Example from "./scripts/example";
 import DataRender from "./scripts/dataRender";
-import Fetcher from "./scripts/fetcher";
+// import Fetcher from "./scripts/fetcher";
+// import map from "./scripts/map";
 
 document.addEventListener("DOMContentLoaded", () => {
   const main = document.getElementById("main");
@@ -8,11 +9,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   const zipForm = document.getElementById("zipForm");
-  const zipButton = document.getElementById("zipButton");
-  window.dataRender = new DataRender(zipButton, zipForm);
+  window.dataRender = new DataRender(zipForm);
+
+  // const zipButton = document.getElementById("zipButton");
   // const cselement = document.createElement("li")
   // cselement.innerHTML = "KB2CUE"
   // window.fetcher = new Fetcher(cselement);
-
 
 });
