@@ -34,8 +34,7 @@ class Fetcher {
 
   setLicense (obj) {
     this.license = obj
-    console.log(this.license.location)
-    // return this.license
+    // console.log(this.license.location)
   }
 
   createDataSection (obj) {
@@ -43,22 +42,30 @@ class Fetcher {
     list.innerHTML = "";
     let dataItem = document.createElement("li");
 
-    dataItem.innerHTML = JSON.stringify(obj);
-    list.appendChild(dataItem);
+    for (const property in obj) {
 
-    // for (const property in obj) {
+      let dataItem = document.createElement("li");
 
-    //   let dataItem = document.createElement("li");
+      if (obj[property] instanceof Object) {
+        console.log("Unpacking Object")
+        dataItem.innerHTML = `${property}: `
+        this.objLister(obj[property], dataItem)
+      } else {
+        dataItem.innerHTML = `${property}: ${obj[property]}`;
+        }
+      list.appendChild(dataItem);
+    }
+  }
 
-    //   if (obj[property] instanceof Object) {
-        // let subList = document.createElement("ul");
-        // let subItem = document.createElement("li");
-        
-    //   }
-    //   dataItem.innerHTML = `${property}: ${obj[property]}`;
-
-    //   list.appendChild(dataItem);
-    // }
+  objLister (obj, node) {
+    let subList = document.createElement("ul");
+    // subList.innerHTML = "";
+    for (const property in obj) {
+      let subItem = document.createElement("li");
+      subItem.innerHTML = `${property}: ${obj[property]}`;
+      subList.appendChild(subItem);
+    }
+    node.append(subList);
   }
 
 

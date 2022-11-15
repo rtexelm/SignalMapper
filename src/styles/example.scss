@@ -1,8 +1,13 @@
 $color: aqua;
 
 section {
+    font-size: 50%;
     float: right;
     position: absolute;
-    top: 250px;
-    right: 100px
+    top: 125px;
+    right: 10px
+}
+
+#csList li {
+    cursor: pointer;
 }

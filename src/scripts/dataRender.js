@@ -1,7 +1,6 @@
 // Handle the list creation by fetching info from the JSON file of zips
 
 import Data from "../assets/NY_callsigns.json"
-
 import Fetcher from "./fetcher.js"
 
 class DataRender {
