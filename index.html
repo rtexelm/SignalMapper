@@ -16,31 +16,52 @@
     <!--Leaflet-->
     <title>Signal Mapper</title>
 </head>
-<header id="profileLinks">
-    <nav>
-        <a href="#">LinkedIn</a>
-        <a href="Githu#">GitHub</a>
-    </nav>
-</header>
-<body>
-    <div id="main">
-    </div>
-    <div id="map">
-    </div>
 
-    <div class="zipForm">
-        <form id="zipForm">
-            <label for="zipcode">Enter Zipcode</label>
-            <input type="text" name="zipcode" id="zipcode">
-            <button id="zipButton">Submit</button>
-        </form>
-    </div>
-    <section>
+<body>
+    <header>
+        <h1 id="title">Signal Mapper</h1>
+        <nav id="profileLinks">
+            <a href="#">LinkedIn</a>
+            <a href="#">GitHub</a>
+            <a href="#" id="modalTrigger">About</a>
+        </nav>
+    </header>
+    <main>
+        <div class="about-modal" id="about">
+
+            <div class="about-content">
+                <span id="close">&#10006</span>
+                <h3>Signal Mapper</h3>
+                <h4>A compact web app to mark the locations of amateur radio licensees in the state of New York.</h4>
+                <p>
+                Enter a valid zipcode in New York State to dsiplay callsigns.<br>
+                Click any of the callsigns to set a marker on the map.
+                <br>
+                Info describing the license will be shown to the right.
+                </p>
+                <h6>Created by <a href="http://github.com/rtexelm" target="_blank">rtexelm</a></h6>
+            </div>
+
+        </div>
+
+        <div class="zipForm">
+            <form id="zipForm">
+                <label for="zipcode"></label>
+                <input type="text" name="zipcode" id="zipcode" value="NY Zipcode, plelase">
+                <button id="zipButton">Submit</button>
+            </form>
+        </div>
+        
+        <section id="mapPopup">
+            <div id="map">
+            </div>
+            <ul id="licenseData">
+            </ul>
+        </section>
+
         <ul id="csList">
         </ul>
-        <ul id="licenseData">
-        </ul>
-    </section>
+    </main>
 </body>
 
 </html>
