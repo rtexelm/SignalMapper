@@ -27,25 +27,26 @@ class Fetcher {
       })
       .then(data => {
         console.log(data);
-        // debugger;
         this.setLicense(data);
         this.createDataSection(this.license);
-        this.snatchCoordz(this.license)
-        L.marker([40.742, -74.006]).addTo(map);
+        let loc = this.snatchCoordz(this.license)
+        let marker = L.marker(loc).addTo(map);
+        marker.bindPopup(this.csString).openPopup();
+        map.flyTo(marker.getLatLng());
       })
       .catch(error => console.error(error));
       
   }
 
   setLicense (obj) {
-    this.license = obj
+    this.license = obj;
     // console.log(this.license.location)
   }
 
   createDataSection (obj) {
     let list = document.getElementById("licenseData")
     list.innerHTML = "";
-    let dataItem = document.createElement("li");
+    // let dataItem = document.createElement("li");
 
     for (const property in obj) {
 
@@ -77,6 +78,7 @@ class Fetcher {
     let lat = pojo.location.latitude
     let long = pojo.location.longitude
     console.log([lat,long])
+    return [lat, long]
   }
 
 }
