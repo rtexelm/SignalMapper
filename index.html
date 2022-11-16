@@ -27,21 +27,27 @@
         </nav>
     </header>
     <main>
-        <div class="about-modal">
+        <div class="about-modal" id="about">
 
             <div class="about-content">
-                <span class="close">$times;</span>
+                <span id="close">&#10006</span>
+                <h3>Signal Mapper</h3>
+                <h4>A compact web app to mark the locations of amateur radio licensees in the state of New York.</h4>
                 <p>
-                    Put instructions here
+                Enter a valid zipcode in New York State to dsiplay callsigns.<br>
+                Click any of the callsigns to set a marker on the map.
+                <br>
+                Info describing the license will be shown to the right.
                 </p>
+                <h6>Created by <a href="http://github.com/rtexelm" target="_blank">rtexelm</a></h6>
             </div>
 
         </div>
 
         <div class="zipForm">
             <form id="zipForm">
-                <label for="zipcode">Enter Zipcode</label>
-                <input type="text" name="zipcode" id="zipcode">
+                <label for="zipcode"></label>
+                <input type="text" name="zipcode" id="zipcode" value="NY Zipcode, plelase">
                 <button id="zipButton">Submit</button>
             </form>
         </div>

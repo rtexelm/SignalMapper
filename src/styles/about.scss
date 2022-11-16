@@ -8,5 +8,28 @@
     z-index: 1;
     overflow: auto;
     background-color: rgb(76, 63, 1);
-    background-color: rgba(76, 63, 1, 0.391);
+    background-color: rgba(110, 32, 98, 0.391);
+}
+
+.about-content {
+    background-color: #1a072e;
+    margin: 15% auto;
+    border: 1px solid rgb(61, 20, 9);
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+}
+
+#close {
+    color: #aaa;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#close:hover,
+#close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
