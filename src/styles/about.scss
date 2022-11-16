@@ -1,0 +1,12 @@
+.about-modal {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: auto;
+    background-color: rgb(76, 63, 1);
+    background-color: rgba(76, 63, 1, 0.391);
+}

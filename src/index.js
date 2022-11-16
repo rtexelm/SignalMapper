@@ -4,8 +4,8 @@ import DataRender from "./scripts/dataRender";
 // import map from "./scripts/map";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const main = document.getElementById("main");
-  new Example(main);
+  const title = document.getElementById("title");
+  new Example(title);
 
 
   const zipForm = document.getElementById("zipForm");
