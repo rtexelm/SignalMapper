@@ -154,24 +154,31 @@ body {
 }
 
 header {
-  width: 100%;
+  margin: 0 auto;
+  padding-top: 0.7rem;
+  width: 80%;
   display: flex;
   justify-content: space-between;
   color: #ccc6be;
+}
+header #title {
+  font-family: "Racing Sans One", sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
 }
 header nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
-  margin-right: 3rem;
 }
 header nav svg {
   fill: rgb(241, 233, 212);
 }
 
 .zipForm {
-  margin: 1rem;
+  margin: 1.5rem auto;
+  width: 80%;
 }
 
 section#mapPopup {
@@ -184,6 +191,9 @@ section#mapPopup {
   gap: 1.5rem;
 }
 section#mapPopup #csList {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.2rem;
+  letter-spacing: 0.05rem;
   grid-row-start: 1;
   grid-row-end: 3;
   grid-column-start: 1;
@@ -203,19 +213,20 @@ section#mapPopup #map {
   grid-row-end: 3;
   grid-column-start: 3;
   grid-column-end: 13;
-  border: 0.4rem solid #553713;
+  border: 0.4rem solid #09072a;
   border-radius: 5px;
 }
 section#mapPopup #dataContainer {
-  z-index: 999;
+  z-index: 1000;
   grid-row-start: 2;
   grid-row-end: 3;
-  grid-column-start: 4;
-  grid-column-end: 8;
+  grid-column-start: 5;
+  grid-column-end: 9;
 }
 section#mapPopup #licenseData {
   width: 0px;
   overflow-y: scroll;
+  font-family: "Racing Sans One", sans-serif;
   overflow-x: hidden;
   transition: all 1500ms ease-in-out;
 }
@@ -224,12 +235,13 @@ section#mapPopup #licenseData.activated {
   height: 100%;
   font-size: 80%;
   background-color: rgba(5, 22, 118, 0.6);
-  border: 0.2rem solid #764305;
+  border: 0.2rem solid #09072a;
   border-radius: 5px;
 }
 
 footer {
   height: 89px;
+  width: 80%;
 }
 
 .about-modal {

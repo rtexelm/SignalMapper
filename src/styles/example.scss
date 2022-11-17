@@ -1,4 +1,6 @@
 $color: aqua;
+$mono-type: 'IBM Plex Mono', monospace;
+$primary-type: 'Racing Sans One', sans-serif;
 
 a {
     text-decoration: none;
@@ -22,13 +24,17 @@ body {
 }
 
 header {
-    width: 100%;
+    margin: 0 auto;
+    padding-top: .7rem;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     // background-color: #916130;
     color: #ccc6be;
     #title {
-        
+        font-family: $primary-type;
+        font-size: 3rem;
+        text-transform: uppercase;
     }
     nav {
         // border: 1em; 
@@ -37,7 +43,6 @@ header {
         justify-content: space-around;
         align-items: center;
         gap: 2rem;
-        margin-right: 3rem;
         svg {
             fill:rgb(241, 233, 212)
         }
@@ -45,7 +50,8 @@ header {
 }
 
 .zipForm {
-    margin: 1rem;
+    margin: 1.5rem auto;
+    width: 80%;
 }
 
 section#mapPopup {
@@ -60,8 +66,9 @@ section#mapPopup {
 
     }
     #csList {
-        // text-align: left;
-        // padding
+        font-family: $mono-type;
+        font-size: 1.2rem;
+        letter-spacing: .05rem;
         grid-row-start: 1;
         grid-row-end: 3;
         grid-column-start: 1;
@@ -88,20 +95,24 @@ section#mapPopup {
         grid-row-end: 3;
         grid-column-start: 3;
         grid-column-end: 13;
-        border: 0.4rem solid #553713;
+        border: 0.4rem solid #09072a;
         border-radius: 5px;
     }
     #dataContainer {
-        z-index: 999;
+        z-index: 1000;
         grid-row-start: 2;
         grid-row-end: 3;
-        grid-column-start: 4;
-        grid-column-end: 8;
+        grid-column-start: 5;
+        grid-column-end: 9;
         // background: #ccc6be;
     }
     #licenseData {
         width: 0px;
         overflow-y: scroll;
+        font-family: $primary-type;
+        // ::-webkit-scrollbar {
+        //     width: 2px;
+        // }
         overflow-x: hidden;
         // font-size: 80%;
         // margin: 3em;
@@ -115,12 +126,14 @@ section#mapPopup {
             font-size: 80%;
             background-color: #05167699;
             // background-color: aliceblue;
-            border: 0.2rem solid #764305;
+            border: 0.2rem solid #09072a;
             border-radius: 5px;
         }
     }
 }
 
 footer {
+    // margin: 1rem auto;
     height: 89px;
+    width: 80%;
 }
