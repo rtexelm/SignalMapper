@@ -1,4 +1,32 @@
+$about-color: #a55259;
+
 .about-modal {
+    h3 {
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: $about-color;
+    }
+    h4 {
+        font-weight: 400;
+        font-size: 1.2rem;
+        color: rgb(240, 215, 215);
+    }
+    h5 {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: $about-color;
+    }
+    p {
+        // font-weight: 400;
+        font-size: 1rem;
+        color: rgb(240, 215, 215);
+    }
+    h6 {
+        font-weight: 600;
+        font-size: .9rem;
+        color: rgb(240, 215, 215);
+    }
+    font-family: Arial, Helvetica, sans-serif;
     display: none;
     position: fixed;
     left: 0;
@@ -16,7 +44,7 @@
     margin: 15% auto;
     border: 1px solid rgb(61, 20, 9);
     padding: 20px;
-    width: 30%;
+    width: 40%;
     text-align: center;
 }
 

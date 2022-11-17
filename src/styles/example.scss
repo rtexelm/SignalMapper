@@ -32,7 +32,7 @@ header {
     // background-color: #916130;
     color: #ccc6be;
     #title {
-        font-family: $primary-type;
+        font-family: $primary-type, sans-serif;
         font-size: 3rem;
         text-transform: uppercase;
         cursor: pointer;
@@ -111,7 +111,7 @@ section#mapPopup {
     #licenseData {
         width: 0px;
         overflow-y: scroll;
-        font-family: $primary-type;
+        font-family: $primary-type, sans-serif;
         // ::-webkit-scrollbar {
         //     width: 2px;
         // }

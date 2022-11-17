@@ -111,7 +111,7 @@ section {
 }
 
 body {
-  line-height: 1;
+  line-height: 1.2;
 }
 
 ol,
@@ -162,7 +162,7 @@ header {
   color: #ccc6be;
 }
 header #title {
-  font-family: "Racing Sans One", sans-serif;
+  font-family: "Racing Sans One", sans-serif, sans-serif;
   font-size: 3rem;
   text-transform: uppercase;
   cursor: pointer;
@@ -231,7 +231,7 @@ section#mapPopup #dataContainer {
 section#mapPopup #licenseData {
   width: 0px;
   overflow-y: scroll;
-  font-family: "Racing Sans One", sans-serif;
+  font-family: "Racing Sans One", sans-serif, sans-serif;
   overflow-x: hidden;
   transition: all 1500ms ease-in-out;
 }
@@ -255,6 +255,7 @@ footer {
 }
 
 .about-modal {
+  font-family: Arial, Helvetica, sans-serif;
   display: none;
   position: fixed;
   left: 0;
@@ -266,13 +267,37 @@ footer {
   background-color: rgb(76, 63, 1);
   background-color: rgba(110, 32, 98, 0.391);
 }
+.about-modal h3 {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #a55259;
+}
+.about-modal h4 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: rgb(240, 215, 215);
+}
+.about-modal h5 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #a55259;
+}
+.about-modal p {
+  font-size: 1rem;
+  color: rgb(240, 215, 215);
+}
+.about-modal h6 {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: rgb(240, 215, 215);
+}
 
 .about-content {
   background-color: #1a072e;
   margin: 15% auto;
   border: 1px solid rgb(61, 20, 9);
   padding: 20px;
-  width: 30%;
+  width: 40%;
   text-align: center;
 }
 
