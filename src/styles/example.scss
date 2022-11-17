@@ -1,4 +1,4 @@
-$color: aqua;
+$border-color: #09072a;
 $mono-type: 'IBM Plex Mono', monospace;
 $primary-type: 'Racing Sans One', sans-serif;
 
@@ -63,9 +63,6 @@ section#mapPopup {
     grid-template-rows: 60vh 20vh;
     grid-template-columns: repeat(12, 1fr);
     gap: 1.5rem;
-    .csScroller {
-        
-    }
     #csList {
         border: 0.4rem solid #09072a;
         border-radius: 5px;
