@@ -6,32 +6,16 @@ import Modal from "./scripts/aboutModal";
 
 document.addEventListener("DOMContentLoaded", () => {
 
+  // Show title
   const title = document.getElementById("title");
   new Example(title);
 
+  // Display page
   const zipForm = document.getElementById("zipForm");
   window.dataRender = new DataRender(zipForm);
 
   // About modal
-
-  // const aboutModal = document.getElementById("about")
   const aboutLink = document.getElementById("modalTrigger");
-  // const close = document.getElementById("close")
-  // const hideMap = document.getElementById("map")
-  // aboutLink.addEventListener("click", () =>{
-  //   aboutModal.style.display = "block";
-  //   hideMap.style.display = "none";
-  // })
-  // close.addEventListener("click", () =>{
-  //   aboutModal.style.display = "none";
-  //   hideMap.style.display = "block";
-  // })
-  // window.onclick = e => {
-  //   if (e.target == aboutModal) {
-  //     aboutModal.style.display = "none";
-  //     hideMap.style.display = "block";
-  //   }
-  // }
   window.aboutModal = new Modal(aboutLink);
 
   // const zipButton = document.getElementById("zipButton");

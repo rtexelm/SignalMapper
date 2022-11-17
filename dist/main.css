@@ -1,13 +1,155 @@
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 a {
   text-decoration: none;
   color: rgb(241, 233, 212);
 }
 
+ul {
+  margin: 0px;
+}
+
 body {
-  background: radial-gradient(circle, rgba(62, 20, 0, 0.272) 1%, rgba(64, 35, 5, 0.401) 47%, rgb(117, 66, 21) 93%, rgb(204, 112, 44) 100%), rgb(19, 20, 35);
+  background-color: rgb(38, 38, 52);
+  -webkit-box-shadow: inset 0 0 40px 20px rgb(0, 26, 128);
+  box-shadow: inset 0 0 40px 20px rgb(4, 18, 93);
   color: #ccc6be;
 }
 
@@ -21,46 +163,73 @@ header nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2em;
-  margin-right: 3em;
+  gap: 2rem;
+  margin-right: 3rem;
+}
+header nav svg {
+  fill: rgb(241, 233, 212);
 }
 
 .zipForm {
   margin: 1rem;
 }
 
-#map {
-  width: 600px;
-  height: 400px;
-  margin: 3em;
+section#mapPopup {
+  margin: 0px auto;
+  width: 80%;
+  height: 80%;
+  display: grid;
+  grid-template-rows: 60vh 20vh;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.5rem;
+}
+section#mapPopup #csList {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  background-color: rgb(52, 37, 95);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  list-style: none;
+  width: 100%;
+}
+section#mapPopup #csList li {
+  padding: 0.3rem 0rem 0.3rem 0.9rem;
+  cursor: pointer;
+}
+section#mapPopup #map {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 13;
   border: 0.4rem solid #553713;
   border-radius: 5px;
 }
-
-section {
-  width: 80%;
-  display: flex;
-  justify-content: space-between;
+section#mapPopup #dataContainer {
+  z-index: 999;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 4;
+  grid-column-end: 8;
 }
-section #licenseData {
+section#mapPopup #licenseData {
+  width: 0px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  transition: all 1500ms ease-in-out;
+}
+section#mapPopup #licenseData.activated {
+  width: 100%;
+  height: 100%;
   font-size: 80%;
-  margin: 3em;
+  background-color: rgba(5, 22, 118, 0.6);
   border: 0.2rem solid #764305;
   border-radius: 5px;
 }
 
-#csList {
-  list-style: none;
-  margin-left: 200px;
-  width: fit-content;
-  height: 200px;
-  display: flex;
-  flex-flow: column wrap;
-  gap: 15px;
-  align-content: space-around;
-}
-#csList li {
-  cursor: pointer;
+footer {
+  height: 89px;
 }
 
 .about-modal {
@@ -70,7 +239,7 @@ section #licenseData {
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 1001;
   overflow: auto;
   background-color: rgb(76, 63, 1);
   background-color: rgba(110, 32, 98, 0.391);

@@ -9,20 +9,20 @@ class Modal {
     e.preventDefault();
     const aboutModal = document.getElementById("about")
     const close = document.getElementById("close")
-    const hideMap = document.getElementById("map")
+    // const hideMap = document.getElementById("map")
 
     aboutModal.style.display = "block";
-    hideMap.style.display = "none";
+    // hideMap.style.display = "none";
 
     close.addEventListener("click", () => {
       aboutModal.style.display = "none";
-      hideMap.style.display = "block";
+      // hideMap.style.display = "block";
     })
 
     window.onclick = e => {
       if (e.target == aboutModal) {
         aboutModal.style.display = "none";
-        hideMap.style.display = "block";
+        // hideMap.style.display = "block";
       }
     }
   }
