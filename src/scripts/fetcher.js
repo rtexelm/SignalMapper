@@ -52,7 +52,7 @@ class Fetcher {
     for (const property in obj) {
 
       let dataItem = document.createElement("li");
-
+      if (obj[property] === "") continue;
       if (obj[property] instanceof Object) {
         console.log("Unpacking Object")
         dataItem.innerHTML = `${titleize(property)}: `
@@ -69,6 +69,7 @@ class Fetcher {
     let subList = document.createElement("ul");
 
     for (const property in obj) {
+      if (obj[property] === "") continue;
       let subItem = document.createElement("li");
       subItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
       subList.appendChild(subItem);
@@ -85,7 +86,9 @@ class Fetcher {
 
 }
 
-function filterData(pojo) {}
+function filterData(pojo) {
+
+}
 
 function titleize(str) {
   return str.toLowerCase().split(' ').map((word) => {

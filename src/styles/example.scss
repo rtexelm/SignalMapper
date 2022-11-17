@@ -5,6 +5,10 @@ $primary-type: 'Racing Sans One', sans-serif;
 a {
     text-decoration: none;
     color: rgb(241, 233, 212);
+    transition: background-color 0.5s;
+    :hover {
+        background-color: rgba(161, 116, 212, 0.544);
+    }
 }
 
 ul {
@@ -14,7 +18,7 @@ ul {
 body {
     // height: 100vh;
     background-color: rgb(38, 38, 52);
-    -webkit-box-shadow: inset 0 0 80px 60px rgb(0, 26, 128);
+    // -webkit-box-shadow: inset 0 0 80px 60px rgb(0, 26, 128);
     box-shadow: inset 0 0 80px 60px rgb(4, 18, 93);
     // background: radial-gradient(circle, rgba(62, 20, 0, 0.272) 1%, rgba(64, 35, 5, 0.401) 47%, rgba(117, 66, 21, 1) 93%, rgba(204, 112, 44, 1) 100%), rgb(19, 20, 35);
     color: #ccc6be;
@@ -89,6 +93,9 @@ section#mapPopup {
             // display: flex;
             padding:.3rem 0rem .3rem 0.9rem;
             cursor: pointer;
+            li:hover {
+                background-color: rgba(172, 144, 229, 0.529);
+            }
         }
     }
     #map {
@@ -104,17 +111,17 @@ section#mapPopup {
         z-index: 1000;
         grid-row-start: 2;
         grid-row-end: 3;
-        grid-column-start: 5;
-        grid-column-end: 9;
+        grid-column-start: 4;
+        grid-column-end: 8;
+        ::-webkit-scrollbar {
+            width: 1rem;
+        }
         // background: #ccc6be;
     }
     #licenseData {
         width: 0px;
         overflow-y: scroll;
         font-family: $primary-type, sans-serif;
-        // ::-webkit-scrollbar {
-        //     width: 2px;
-        // }
         overflow-x: hidden;
         // font-size: 80%;
         // margin: 3em;
@@ -126,10 +133,10 @@ section#mapPopup {
             width: 100%;
             height: 100%;
             font-size: 80%;
-            background-color: #05167699;
+            background-color: #24348f99;
             // background-color: aliceblue;
             border: 0.2rem solid #09072a;
-            border-radius: 5px;
+            border-radius: 3px;
         }
     }
 }
