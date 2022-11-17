@@ -45,6 +45,7 @@ class Fetcher {
 
   createDataSection (obj) {
     let list = document.getElementById("licenseData")
+    list.className = "activated";
     list.innerHTML = "";
     // let dataItem = document.createElement("li");
 
