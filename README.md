@@ -1,47 +1,103 @@
-# SignalMapper
+# Signal Mapper
 
-## Background
-
-SignalMapper is intended to be a data visualization of amateur radio signals in any given geographical area. Using location and callsign lookup APIs, the app will display the locations of these stations and their related info. It will be visually pleasing.
+Signal Mapper is a visualization of amateur radio license locations in the state of New York grouped by zipcode. Each license is represented by its current holder's registered callsign. These callsigns are unique indentifiers provided by the Federal Communications Commission. The initial state is a map centered on New York City. After providing a valid zipcode from New York state a list of callsigns is dynamically generated to the left of the map. Each callsign is clickable resulting in its registered license location to be plotted and focused via animation onto the map. Concurrently a small window animates onto the map area displaying any relevant data available to the license received from a http request made to the callook.info API.
 
 ## Functionality and MVPs
 
-In SignalMapper, user will be able to:
+In Signal Mapper, users are able to:
 
-1. Input location data, such as a zip code or address, with a default provided
-2. Click through nodes on a map representing the locations of radio signals
-3. The map will be interactive
-4. Display a list of the signals in the area
-5. Display relevant data related to the signals in several visual styles
-6. Include animations for interaction events
+- Input location data in zipcode format. The app then fetches any callsigns related to this location from data provided by the FCC and represents them in a vertical scrollable field.
 
-In addition, this project will include:
+  ![Form Submit](./src/assets/submit.gif)
 
-1. A README
-2. An about page wtih links
+- Choose a callsign by clicking on the list initiating an async request to the external API for a data object related to the specific callsign.
+
+    ```js
+      fetch(`https://callook.info/${this.csString}/json`)
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        } else {
+          throw res;
+        }
+      })
+      .then(data => {
+        console.log(data);
+      .catch(error => console.error(error));
+
+- The data object is unpacked and rendered as an HTML list.
+
+  ```js
+  createDataSection (obj) {
+    let list = document.getElementById("licenseData")
+    list.innerHTML = "";
+
+    for (const property in obj) {
+      let dataItem = document.createElement("li");
+
+      if (obj[property] instanceof Object) {
+        console.log("Unpacking Object")
+        dataItem.innerHTML = `${titleize(property)}: `
+        this.objLister(obj[property], dataItem)
+      } else {
+        dataItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
+        }
+        
+      list.appendChild(dataItem);
+    }
+  }
+
+  objLister (obj, node) {
+    let subList = document.createElement("ul");
+
+    for (const property in obj) {
+      let subItem = document.createElement("li");
+      subItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
+      subList.appendChild(subItem);
+    }
+    node.append(subList);
+  }
+
+- Geographic coordinates from the data are used to create and focus via animation onto the map.
+
+  ```js
+  this.setLicense(data);
+  this.createDataSection(this.license);
+  let loc = this.snatchCoordz(this.license)
+  let marker = L.marker(loc).addTo(map);
+  marker.bindPopup(this.csString).openPopup();
+  map.flyTo(marker.getLatLng());
+
+- The data window is animated onto the map area displaying data for the last-clicked callsign.
+
+![Callsign Mapping](./src/assets/clicksign.gif)
+
+In addition, this project includes:
+
+1. This README
+2. An about modal with instructions
 3. A favicon
-4. Basic instructions if needed or animated queues to the user
 
-## Wireframes
+## Wireframe
 
-<https://wireframe.cc/mN6GRz>
+![Wireframe](./src/assets/wireframe.png)
 
 ## Technologies, Libraries, APIs
 
-This project will be implemented with the following technologies
+This project was be implemented with the following technologies
 
-- A D3 library to render the data visuals
-  - <https://d3js.org/>
-- The radioreference.com API to retrieve radio data
-  - <https://wiki.radioreference.com/index.php/API>
-- The callook.info API to retrieve radio data
+- Leaflet, an opensource JS module for interactive maps
+  - <https://leafletjs.com/>
+- The FCC Universal Licensing System to provide callsign
+  - <https://www.fcc.gov/wireless/universal-licensing-system>
+- The callook.info API to retrieve license data
   - <https://callook.info/>
 - Webpack and Babel to bundle and transpile
 - npm to manage project dependencies
 
 ## Anticipated Features
 
-1. A webplayer to listen to the stations
+1. A webplayer to listen amateur radio frequencies
 2. A noise mixer to combine sounds from other sources
 
 ## Timeline
@@ -49,8 +105,7 @@ This project will be implemented with the following technologies
 ### Friday and Weekend
 
 - Begin backend interaction with the APIs to gather resources
-- Get accustomed to D3 and basic visual rendering
-- Implement app armature for interaction and styling/animation
+- Implement app armature for interaction
 
 ### Monday
 
@@ -63,8 +118,18 @@ This project will be implemented with the following technologies
 
 ### Wednesday
 
-- Visually polish as much as possible to make sure the site is presentable
+- Visually polish as much as possible
 
 ### Thursday Morning
 
-- Deploy, rewrite proposal
+- Deploy
+
+## CC Licensing
+
+- Icons by inconmonstr
+  - <https://iconmonstr.com/>
+- Map tiling by Stadia Maps
+  - <https://stadiamaps.com/guides/interactive-maps/>
+- Fonts by Google Fonts
+  - <https://fonts.google.com/specimen/Racing+Sans+One>
+  - <https://fonts.google.com/specimen/IBM+Plex+Mono>

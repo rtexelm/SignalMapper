@@ -60,6 +60,7 @@ class Fetcher {
       } else {
         dataItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
         }
+        
       list.appendChild(dataItem);
     }
   }
