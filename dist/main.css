@@ -140,10 +140,6 @@ table {
 a {
   text-decoration: none;
   color: rgb(241, 233, 212);
-  transition: background-color 0.5s;
-}
-a :hover {
-  background-color: rgba(161, 116, 212, 0.544);
 }
 
 ul {
@@ -178,6 +174,9 @@ header nav {
 }
 header nav svg {
   fill: rgb(241, 233, 212);
+}
+header nav a:hover svg {
+  fill: rgb(241, 203, 203);
 }
 
 .zipForm {

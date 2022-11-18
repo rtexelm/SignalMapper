@@ -5,10 +5,6 @@ $primary-type: 'Racing Sans One', sans-serif;
 a {
     text-decoration: none;
     color: rgb(241, 233, 212);
-    transition: background-color 0.5s;
-    :hover {
-        background-color: rgba(161, 116, 212, 0.544);
-    }
 }
 
 ul {
@@ -50,6 +46,11 @@ header {
         gap: 2rem;
         svg {
             fill:rgb(241, 233, 212)
+        }
+        a:hover {
+            svg {
+                fill:rgb(241, 203, 203)
+            }
         }
     }
 }
