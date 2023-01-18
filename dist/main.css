@@ -184,6 +184,18 @@ header nav a:hover svg {
   width: 80%;
 }
 
+#zipcode {
+  background: hsla(253deg, 60%, 60%, 0.7);
+  color: white;
+  border: 0;
+  padding: 8px 10px;
+}
+
+#zipButton {
+  background: hsl(270deg, 40%, 30%);
+  color: #EA698B;
+}
+
 section#mapPopup {
   margin: 0px auto;
   width: 80%;
@@ -320,5 +332,13 @@ footer {
 #close:focus {
   color: rgb(48, 11, 11);
   text-decoration: none;
+  cursor: pointer;
+}
+
+.btn {
+  border: 0;
+  text-decoration: none;
+  font-family: "Racing Sans One", sans-serif;
+  text-transform: uppercase;
   cursor: pointer;
 }
