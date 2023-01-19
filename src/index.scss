@@ -10,15 +10,9 @@
     cursor: pointer;
 }
 
-.pulse:hover,
-.pulse:focus,
-.pulse:active {
-    animation: pulse 1s;
-    box-shadow: 0 0 0 2em transparent;
-}
+// .pulse:hover,
+// .pulse:focus {
+//     animation: pulse 1s;
+//     box-shadow: 0 0 0 2em hsla(315, 40%, 30%, 0);
+// }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 hsla(315, 40%, 30%, 1);
-    }
-}

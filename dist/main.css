@@ -194,14 +194,25 @@ header nav a:hover svg {
 #zipButton {
   background: hsl(270deg, 40%, 30%);
   color: #EA698B;
+  border-radius: 10%;
   margin-left: 10px;
-  padding: 6px;
+  padding: 6px 10px;
   transition: 0.25s;
 }
 #zipButton:hover, #zipButton:focus {
+  box-shadow: 0 0 0 2em transparent;
+  animation: pulse 1s infinite;
   filter: hue-rotate(45deg);
 }
+#zipButton:active {
+  transform: scale(0.98, 0.98);
+}
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #6b2e5c;
+  }
+}
 section#mapPopup {
   margin: 0px auto;
   width: 80%;
@@ -347,17 +358,4 @@ footer {
   font-family: "Racing Sans One", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
-}
-
-.pulse:hover,
-.pulse:focus,
-.pulse:active {
-  animation: pulse 1s;
-  box-shadow: 0 0 0 2em transparent;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 hsl(315deg, 40%, 30%);
-  }
 }
