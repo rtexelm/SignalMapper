@@ -13,11 +13,12 @@ ul {
 
 body {
     // height: 100vh;
-    background-color: rgb(38, 38, 52);
+    background-color: rgb(10, 10, 11);
     // -webkit-box-shadow: inset 0 0 80px 60px rgb(0, 26, 128);
-    box-shadow: inset 0 0 80px 60px rgb(4, 18, 93);
-    background: radial-gradient(circle, rgba(62, 20, 0, 0.272) 1%, rgba(64, 35, 5, 0.401) 47%, rgba(117, 66, 21, 1) 93%, rgba(204, 112, 44, 1) 100%), rgb(19, 20, 35);
-    color: #ccc6be;
+    // box-shadow: inset 0 0 200px 100px rgb(12, 39, 188);
+    box-shadow: inset 0 0 30px 30px rgb(66, 3, 84), inset 0 0 80px 60px rgb(4, 18, 93), inset 0 0 200px 100px rgb(12, 39, 188);
+    // background: radial-gradient(circle, rgba(62, 20, 0, 0.272) 1%, rgba(64, 35, 5, 0.401) 47%, rgba(117, 66, 21, 1) 93%, rgba(204, 112, 44, 1) 100%), rgb(19, 20, 35);
+    // color: #ccc6be;
     // max-width: 1080px;
     // margin: 0 auto;
     // float: none;
