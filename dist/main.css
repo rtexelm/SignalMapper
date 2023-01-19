@@ -149,6 +149,7 @@ ul {
 body {
   background-color: rgb(38, 38, 52);
   box-shadow: inset 0 0 80px 60px rgb(4, 18, 93);
+  background: radial-gradient(circle, rgba(62, 20, 0, 0.272) 1%, rgba(64, 35, 5, 0.401) 47%, rgb(117, 66, 21) 93%, rgb(204, 112, 44) 100%), rgb(19, 20, 35);
   color: #ccc6be;
 }
 
