@@ -18,7 +18,7 @@ body {
     // box-shadow: inset 0 0 200px 100px rgb(12, 39, 188);
     box-shadow: inset 0 0 30px 30px rgb(66, 3, 84), inset 0 0 80px 60px rgb(4, 18, 93), inset 0 0 200px 100px rgb(12, 39, 188);
     // background: radial-gradient(circle, rgba(62, 20, 0, 0.272) 1%, rgba(64, 35, 5, 0.401) 47%, rgba(117, 66, 21, 1) 93%, rgba(204, 112, 44, 1) 100%), rgb(19, 20, 35);
-    // color: #ccc6be;
+    color: #ccc6be;
     // max-width: 1080px;
     // margin: 0 auto;
     // float: none;
@@ -26,7 +26,7 @@ body {
 
 header {
     margin: 0 auto;
-    padding-top: .7rem;
+    padding-top: 1.1rem;
     width: 80%;
     display: flex;
     justify-content: space-between;
@@ -80,7 +80,7 @@ header {
     &:hover,
     &:focus {
         box-shadow: 0 0 0 2em transparent;
-        animation: pulse 1s infinite;
+        animation: pulse 1250ms infinite;
         filter: hue-rotate(45deg);
     }
     &:active {
@@ -103,6 +103,7 @@ section#mapPopup {
     grid-template-columns: repeat(12, 1fr);
     gap: 1.5rem;
     #csList {
+        // color: #ccc6be;
         border: 0.4rem solid #09072a;
         border-radius: 5px;
         background: rgb(8, 31, 23);
@@ -115,17 +116,12 @@ section#mapPopup {
         grid-column-start: 1;
         grid-column-end: 3;
         background-color: rgb(52, 37, 95);
-        overflow-y: scroll;
+        overflow-y: auto;
         overflow-x: hidden;
-        // width: 100%;
         list-style: none;
-        // overflow: scroll;
-        // border: 0.2rem solid #af7732;
         width: 100%;
-        // border-radius: 5px;
 
         li {
-            // display: flex;
             padding:.3rem 0rem .3rem 0.9rem;
             cursor: pointer;
             li:hover {
@@ -155,7 +151,7 @@ section#mapPopup {
     }
     #licenseData {
         width: 0px;
-        overflow-y: scroll;
+        overflow-y: auto;
         font-family: $primary-type, sans-serif;
         overflow-x: hidden;
         // font-size: 80%;
