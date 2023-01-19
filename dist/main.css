@@ -157,12 +157,14 @@ header {
   width: 80%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: -8px;
   color: #ccc6be;
 }
 header #title {
   font-family: "Racing Sans One", sans-serif, sans-serif;
   font-size: 3rem;
   text-transform: uppercase;
+  text-shadow: -6px 3px 3px rgba(171, 124, 84, 0.44), -10px 6px 3px rgba(145, 84, 171, 0.44), 7px 0px 7px rgba(34, 50, 165, 0.44);
   cursor: pointer;
 }
 header nav {
