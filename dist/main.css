@@ -148,7 +148,7 @@ ul {
 
 body {
   background-color: rgb(10, 10, 11);
-  box-shadow: inset 0 0 30px 30px rgb(66, 3, 84), inset 0 0 80px 60px rgb(4, 18, 93), inset 0 0 200px 100px rgb(12, 39, 188);
+  box-shadow: inset 0 0 30px 30px rgba(66, 3, 84, 0.699), inset 0 0 80px 60px rgb(4, 18, 93), inset 0 0 200px 100px rgb(12, 39, 188);
   color: #ccc6be;
 }
 
@@ -191,6 +191,9 @@ header nav a:hover svg {
   color: white;
   border: 0;
   padding: 8px 10px;
+}
+#zipcode::placeholder {
+  color: gainsboro;
 }
 
 #zipButton {
