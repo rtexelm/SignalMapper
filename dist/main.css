@@ -260,7 +260,7 @@ section#mapPopup #csList li {
   cursor: pointer;
 }
 section#mapPopup #csList li:hover {
-  background-color: rgba(172, 144, 229, 0.529);
+  background-color: rgba(130, 103, 227, 0.529);
 }
 section#mapPopup #map {
   grid-row-start: 1;
@@ -293,7 +293,7 @@ section#mapPopup #licenseData.activated {
   border: 0.2rem solid #09072a;
   border-radius: 3px;
   scrollbar-width: thin;
-  scrollbar-color: rgb(35, 35, 136) black;
+  scrollbar-color: rgb(64, 64, 180) black;
 }
 section#mapPopup #licenseData.activated::-webkit-scrollbar {
   width: 8px;
