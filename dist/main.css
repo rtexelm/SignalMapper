@@ -231,7 +231,7 @@ section#mapPopup #csList {
   border: 0.4rem solid #09072a;
   border-radius: 5px;
   background: rgb(8, 31, 23);
-  background: linear-gradient(0deg, rgb(8, 31, 23) 2%, rgb(91, 82, 105) 50%, rgb(8, 31, 23) 99%);
+  background: linear-gradient(0deg, rgb(8, 31, 23) 2%, rgb(48, 48, 48) 50%, rgb(8, 31, 23) 99%);
   font-family: "IBM Plex Mono", monospace;
   font-size: 1.2rem;
   letter-spacing: 0.05rem;
@@ -245,11 +245,21 @@ section#mapPopup #csList {
   list-style: none;
   width: 100%;
 }
+section#mapPopup #csList::-webkit-scrollbar {
+  width: 8px;
+}
+section#mapPopup #csList::-webkit-scrollbar-track {
+  background-color: rgb(8, 11, 27);
+}
+section#mapPopup #csList::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 20, 114, 0.529);
+  border-radius: 35px;
+}
 section#mapPopup #csList li {
   padding: 0.3rem 0rem 0.3rem 0.9rem;
   cursor: pointer;
 }
-section#mapPopup #csList li li:hover {
+section#mapPopup #csList li:hover {
   background-color: rgba(172, 144, 229, 0.529);
 }
 section#mapPopup #map {
@@ -267,14 +277,12 @@ section#mapPopup #dataContainer {
   grid-column-start: 4;
   grid-column-end: 8;
 }
-section#mapPopup #dataContainer ::-webkit-scrollbar {
-  width: 1rem;
-}
 section#mapPopup #licenseData {
   width: 0px;
   overflow-y: auto;
   font-family: "Racing Sans One", sans-serif, sans-serif;
   overflow-x: hidden;
+  overflow-y: auto;
   transition: all 1500ms ease-in-out;
 }
 section#mapPopup #licenseData.activated {
@@ -284,6 +292,18 @@ section#mapPopup #licenseData.activated {
   background-color: rgba(36, 52, 143, 0.6);
   border: 0.2rem solid #09072a;
   border-radius: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(35, 35, 136) black;
+}
+section#mapPopup #licenseData.activated::-webkit-scrollbar {
+  width: 8px;
+}
+section#mapPopup #licenseData.activated::-webkit-scrollbar-track {
+  background-color: rgb(8, 11, 27);
+}
+section#mapPopup #licenseData.activated::-webkit-scrollbar-thumb {
+  background-color: rgba(47, 20, 114, 0.529);
+  border-radius: 35px;
 }
 
 footer {

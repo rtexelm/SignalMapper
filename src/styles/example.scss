@@ -110,7 +110,7 @@ section#mapPopup {
         border: 0.4rem solid #09072a;
         border-radius: 5px;
         background: rgb(8, 31, 23);
-        background: linear-gradient(0deg, rgba(8, 31, 23, 1) 2%, rgba(91, 82, 105, 1) 50%, rgba(8, 31, 23, 1) 99%);
+        background: linear-gradient(0deg, rgba(8, 31, 23, 1) 2%, rgb(48, 48, 48) 50%, rgba(8, 31, 23, 1) 99%);
         font-family: $mono-type;
         font-size: 1.2rem;
         letter-spacing: .05rem;
@@ -123,11 +123,21 @@ section#mapPopup {
         overflow-x: hidden;
         list-style: none;
         width: 100%;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: rgb(8, 11, 27);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(47, 20, 114, 0.529);
+            border-radius: 35px;
+        }
 
         li {
             padding:.3rem 0rem .3rem 0.9rem;
             cursor: pointer;
-            li:hover {
+            &:hover {
                 background-color: rgba(172, 144, 229, 0.529);
             }
         }
@@ -147,16 +157,13 @@ section#mapPopup {
         grid-row-end: 3;
         grid-column-start: 4;
         grid-column-end: 8;
-        ::-webkit-scrollbar {
-            width: 1rem;
-        }
-        // background: #ccc6be;
     }
     #licenseData {
         width: 0px;
         overflow-y: auto;
         font-family: $primary-type, sans-serif;
         overflow-x: hidden;
+        overflow-y: auto;
         // font-size: 80%;
         // margin: 3em;
         // border: 0.2rem solid #764305;
@@ -171,6 +178,18 @@ section#mapPopup {
             // background-color: aliceblue;
             border: 0.2rem solid #09072a;
             border-radius: 3px;
+            scrollbar-width: thin;
+            scrollbar-color: rgb(35, 35, 136) black;
+            &::-webkit-scrollbar {
+                width: 8px;
+            }
+            &::-webkit-scrollbar-track {
+                background-color: rgb(8, 11, 27);
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: rgba(47, 20, 114, 0.529);
+                border-radius: 35px;
+            }
         }
     }
 }
