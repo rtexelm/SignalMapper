@@ -178,6 +178,8 @@ section#mapPopup {
             // background-color: aliceblue;
             border: 0.2rem solid #09072a;
             border-radius: 3px;
+            scrollbar-width: thin;
+            scrollbar-color: rgb(35, 35, 136) black;
             &::-webkit-scrollbar {
                 width: 8px;
             }

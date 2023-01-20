@@ -292,6 +292,8 @@ section#mapPopup #licenseData.activated {
   background-color: rgba(36, 52, 143, 0.6);
   border: 0.2rem solid #09072a;
   border-radius: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(35, 35, 136) black;
 }
 section#mapPopup #licenseData.activated::-webkit-scrollbar {
   width: 8px;
