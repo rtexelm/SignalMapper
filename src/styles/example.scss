@@ -123,11 +123,21 @@ section#mapPopup {
         overflow-x: hidden;
         list-style: none;
         width: 100%;
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+        &::-webkit-scrollbar-track {
+            background-color: rgb(8, 11, 27);
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(172, 144, 229, 0.529);
+            border-radius: 35px;
+        }
 
         li {
             padding:.3rem 0rem .3rem 0.9rem;
             cursor: pointer;
-            li:hover {
+            &:hover {
                 background-color: rgba(172, 144, 229, 0.529);
             }
         }

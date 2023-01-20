@@ -245,11 +245,21 @@ section#mapPopup #csList {
   list-style: none;
   width: 100%;
 }
+section#mapPopup #csList::-webkit-scrollbar {
+  width: 8px;
+}
+section#mapPopup #csList::-webkit-scrollbar-track {
+  background-color: rgb(8, 11, 27);
+}
+section#mapPopup #csList::-webkit-scrollbar-thumb {
+  background-color: rgba(172, 144, 229, 0.529);
+  border-radius: 35px;
+}
 section#mapPopup #csList li {
   padding: 0.3rem 0rem 0.3rem 0.9rem;
   cursor: pointer;
 }
-section#mapPopup #csList li li:hover {
+section#mapPopup #csList li:hover {
   background-color: rgba(172, 144, 229, 0.529);
 }
 section#mapPopup #map {
