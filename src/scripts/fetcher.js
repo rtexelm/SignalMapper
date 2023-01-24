@@ -7,7 +7,6 @@ import map from "./map";
 
 class Fetcher {
   constructor(callsign) {
-    // debugger;
     this.callsign = callsign;
     this.csString = this.callsign.innerHTML.toLowerCase();
     this.callsign.addEventListener("click", this.getLicenseData.bind(this));
@@ -39,14 +38,12 @@ class Fetcher {
 
   setLicense(obj) {
     this.license = obj;
-    // console.log(this.license.location)
   }
 
   createDataSection(obj) {
     let list = document.getElementById("licenseData");
     list.className = "activated";
     list.innerHTML = "";
-    // let dataItem = document.createElement("li");
 
     for (const property in obj) {
       let dataItem = document.createElement("li");
