@@ -75,7 +75,7 @@ class Fetcher {
   snatchCoordz(pojo) {
     let lat = pojo.location.latitude;
     let long = pojo.location.longitude;
-    console.log([lat, long]);
+    // console.log([lat, long]);
     return [lat, long];
   }
 
