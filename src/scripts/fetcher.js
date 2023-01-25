@@ -25,7 +25,7 @@ class Fetcher {
         }
       })
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         this.setLicense(data);
         this.createDataSection(this.license);
         let loc = this.snatchCoordz(this.license);
@@ -75,12 +75,20 @@ class Fetcher {
   snatchCoordz(pojo) {
     let lat = pojo.location.latitude;
     let long = pojo.location.longitude;
-    console.log([lat, long]);
+    // console.log([lat, long]);
     return [lat, long];
+  }
+
+  setMarker(loc) {
+    let marker = L.marker(loc).addTo(map);
+    marker.bindPopup(this.csString).openPopup();
+    map.flyTo(marker.getLatLng());
   }
 }
 
-function filterData(pojo) {}
+// function filterData(pojo) {}
+
+function setMarker(location) {}
 
 function titleize(str) {
   return str
