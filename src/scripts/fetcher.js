@@ -25,7 +25,6 @@ class Fetcher {
         }
       })
       .then((data) => {
-        // console.log(data);
         this.setLicense(data);
         this.createDataSection(this.license);
         let loc = this.snatchCoordz(this.license);
@@ -37,20 +36,29 @@ class Fetcher {
   }
 
   setLicense(obj) {
-    this.license = obj;
+    console.log(obj.status);
+    if (obj.status === "INVALID") {
+      this.license = {
+        status: "Invalid",
+        Note: "Sometimes the public FCC data I have collected does not match that of other automated systems. This callsign is one such instance and does not have a current valid record. Try another callsign on the left",
+      };
+    } else this.license = obj;
   }
+
+  validate(obj) {}
 
   createDataSection(obj) {
     let list = document.getElementById("licenseData");
     list.className = "activated";
     list.innerHTML = "";
+    console.log(obj);
 
-    for (const property in obj) {
+    for (let property in obj) {
       let dataItem = document.createElement("li");
-      if (obj[property] === "") continue;
+      if (!obj[property]) continue;
       if (obj[property] instanceof Object) {
         console.log("Unpacking Object");
-        dataItem.innerHTML = `${titleize(property)}: `;
+        // dataItem.innerHTML = `${titleize(property)}: `;
         this.objLister(obj[property], dataItem);
       } else {
         dataItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
@@ -63,8 +71,8 @@ class Fetcher {
   objLister(obj, node) {
     let subList = document.createElement("ul");
 
-    for (const property in obj) {
-      if (obj[property] === "") continue;
+    for (let property in obj) {
+      if (!obj[property]) continue;
       let subItem = document.createElement("li");
       subItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
       subList.appendChild(subItem);
@@ -85,10 +93,6 @@ class Fetcher {
     map.flyTo(marker.getLatLng());
   }
 }
-
-// function filterData(pojo) {}
-
-function setMarker(location) {}
 
 function titleize(str) {
   return str
