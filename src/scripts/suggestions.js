@@ -1,4 +1,6 @@
-// Select 4 zip codes from the list at random
+// Select zip codes from the list at random
+// Display as clickable buttons
+
 class Suggester {
   constructor(data) {
     this.data = data;

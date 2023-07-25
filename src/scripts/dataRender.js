@@ -48,12 +48,6 @@ class DataRender {
       list.appendChild(csItem);
     });
   }
-
-  // handleForm(e) {
-  //   console.log("formdata begins");
-  //   const data = e.formData;
-  //   console.log(data);
-  // }
 }
 
 export default DataRender;
