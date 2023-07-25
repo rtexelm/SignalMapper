@@ -13,8 +13,6 @@ class DataRender {
 
   handleClick(e) {
     e.preventDefault();
-    // console.log("clicccccked");
-    // const formData = new FormData(this.form);
 
     const zipcodeField = document.getElementById("zipcode");
     const zipcode = zipcodeField.value;
@@ -22,8 +20,6 @@ class DataRender {
     console.log(zipcode);
 
     const callsigns = this.getSigns(Data, zipcode);
-
-    // console.log(callsigns)
 
     this.populateList(callsigns);
   }
