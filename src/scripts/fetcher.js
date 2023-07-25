@@ -105,3 +105,4 @@ function titleize(str) {
 }
 
 export default Fetcher;
+export { titleize };

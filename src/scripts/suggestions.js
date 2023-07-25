@@ -6,10 +6,10 @@ class Suggester {
     this.zips = [];
   }
 
-  getFourZips(data) {
+  getZips(data) {
     const zips = [];
     const keys = Object.keys(data);
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       const random = Math.floor(Math.random() * keys.length);
       zips.push(keys[random]);
     }
