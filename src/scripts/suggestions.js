@@ -8,6 +8,7 @@ class Suggester {
     this.buttons = buttons;
     this.keys = Object.keys(Data);
     this.zips = this.getZips();
+    console.log(this.zips);
   }
 
   getZips() {
@@ -19,11 +20,24 @@ class Suggester {
     return zips;
   }
 
-  handleClick(e) {
+  handleClick(e, zip) {
     e.preventDefault();
+
+    const input = document.getElementById("zipcode");
+    const submit = document.getElementById("zipButton");
+    input.value = zip;
+    submit.click();
+    input.value = "";
   }
 
-  buttonGenerator(zipcodes) {}
+  buttonGenerator(zipcodes) {
+    zipcodes.forEach((zip) => {
+      let zipButton = document.createElement("li");
+      zipButton.innerHTML = zip;
+      zipButton.addEventListener("click", this.handleClick(zip).bind(this));
+      this.buttons.append(zipButton);
+    });
+  }
 }
 
 export default Suggester;
