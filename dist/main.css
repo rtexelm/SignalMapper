@@ -238,7 +238,7 @@ header nav a:hover svg {
 #suggest-list {
   display: flex;
   justify-content: space-between;
-  gap: 5px;
+  gap: 8px;
 }
 #suggest-list li {
   background: hsla(340deg, 60%, 65%, 0.7);
