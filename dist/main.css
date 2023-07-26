@@ -242,10 +242,15 @@ header nav a:hover svg {
 }
 #suggest-list li {
   background: hsla(340deg, 60%, 65%, 0.7);
-  font: 400 13px sans-serif;
+  font: 400 13px "Arial", sans-serif;
   cursor: pointer;
   border-radius: 5%;
   padding: 8px 12px;
+}
+#suggest-list li:hover, #suggest-list li:focus {
+  box-shadow: 0 0 0 2em transparent;
+  animation: pulse 1250ms infinite;
+  filter: hue-rotate(45deg);
 }
 
 section#mapPopup {
