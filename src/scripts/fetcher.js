@@ -51,7 +51,7 @@ class Fetcher {
     let list = document.getElementById("licenseData");
     list.className = "activated";
     list.innerHTML = "";
-    console.log(obj);
+    // console.log(obj);
 
     for (let property in obj) {
       let dataItem = document.createElement("li");

@@ -1,10 +1,11 @@
+import Data from "../assets/NY_callsigns.json";
+
 // Select zip codes from the list at random
 // Display as clickable buttons
 
 class Suggester {
   constructor(data) {
-    this.data = data;
-    this.keys = Object.keys(data);
+    this.keys = Object.keys(Data);
     this.zips = [];
   }
 
@@ -13,10 +14,12 @@ class Suggester {
     const keys = Object.keys(data);
     for (let i = 0; i < 6; i++) {
       const random = Math.floor(Math.random() * keys.length);
-      zips.push(keys[random]);
+      this.zips.push(keys[random]);
     }
     return zips;
   }
+
+  buttonGenerator(zipcodes) {}
 }
 
 export default Suggester;
