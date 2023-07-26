@@ -45,7 +45,7 @@ class Fetcher {
     } else this.license = obj;
   }
 
-  validate(obj) {}
+  // validate(obj) {}
 
   createDataSection(obj) {
     let list = document.getElementById("licenseData");
