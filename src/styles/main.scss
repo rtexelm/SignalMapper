@@ -149,6 +149,7 @@ section#mapPopup {
         overflow-x: hidden;
         list-style: none;
         width: 100%;
+        min-width: fit-content;
         &::-webkit-scrollbar {
             width: 8px;
         }

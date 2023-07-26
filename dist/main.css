@@ -274,6 +274,7 @@ section#mapPopup #csList {
   overflow-x: hidden;
   list-style: none;
   width: 100%;
+  min-width: fit-content;
 }
 section#mapPopup #csList::-webkit-scrollbar {
   width: 8px;
