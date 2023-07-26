@@ -51,7 +51,7 @@
                 <br>
                 <h5>Instructions</h5>
                 <p>
-                Enter a valid zipcode in New York State to dsiplay callsigns.<br>
+                Enter a valid zipcode in New York State or choose one of the randomly generated selections to display all callsigns.<br>
                 Click any of the callsigns to set a marker on the map.
                 <br>
                 Info describing the license will be shown to the right.
@@ -66,12 +66,12 @@
 
             <form id="zipForm">
                 <label for="zipcode"></label>
-                <input type="text" name="zipcode" id="zipcode" placeholder="NY Zipcode, please" onfocus="this.value=''">
+                <input type="text" name="zipcode" id="zipcode" placeholder="Enter NY zipcode" onfocus="this.value=''">
                 <button class="btn" id="zipButton">Callsigns</button>
             </form>
 
-            <article id="suggest">
-                Some suggested zipcodes
+            <article class="suggest">
+                <h2>or choose a random zipcode</h2>
                 <ul id="suggest-list">
                 </ul>
             </article>

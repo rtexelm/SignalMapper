@@ -137,6 +137,11 @@ table {
   border-spacing: 0;
 }
 
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #6b2e5c;
+  }
+}
 a {
   text-decoration: none;
   color: rgb(241, 233, 212);
@@ -185,6 +190,14 @@ header nav a:hover svg {
   margin: 1.5rem auto;
   width: 80%;
   display: flex;
+  align-items: flex-end;
+  flex-flow: row wrap;
+}
+
+#zipForm {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1 1 auto;
 }
 
 #zipcode {
@@ -214,11 +227,27 @@ header nav a:hover svg {
   transform: scale(0.98, 0.98);
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 #6b2e5c;
-  }
+.suggest {
+  margin-left: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  flex: 6 1 auto;
 }
+
+#suggest-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+#suggest-list li {
+  background: hsla(340deg, 60%, 65%, 0.7);
+  font: 400 13px sans-serif;
+  cursor: pointer;
+  border-radius: 5%;
+  padding: 8px 12px;
+}
+
 section#mapPopup {
   margin: 0px auto;
   width: 80%;
@@ -385,4 +414,9 @@ footer {
   font-family: "Racing Sans One", sans-serif;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+h2 {
+  font: 600 1rem "Racing Sans One", sans-serif;
+  text-transform: uppercase;
 }

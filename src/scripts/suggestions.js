@@ -14,7 +14,7 @@ class Suggester {
 
   getZips() {
     const zips = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 7; i++) {
       const random = Math.floor(Math.random() * this.keys.length);
       zips.push(this.keys[random]);
     }
