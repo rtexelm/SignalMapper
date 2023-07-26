@@ -9,6 +9,7 @@ class Suggester {
     this.keys = Object.keys(Data);
     this.zips = this.getZips();
     console.log(this.zips);
+    this.buttonGenerator(this.zips);
   }
 
   getZips() {
@@ -20,9 +21,7 @@ class Suggester {
     return zips;
   }
 
-  handleClick(e, zip) {
-    e.preventDefault();
-
+  handleClick(zip) {
     const input = document.getElementById("zipcode");
     const submit = document.getElementById("zipButton");
     input.value = zip;
@@ -34,7 +33,7 @@ class Suggester {
     zipcodes.forEach((zip) => {
       let zipButton = document.createElement("li");
       zipButton.innerHTML = zip;
-      zipButton.addEventListener("click", this.handleClick(zip).bind(this));
+      zipButton.addEventListener("click", (event) => this.handleClick(zip));
       this.buttons.append(zipButton);
     });
   }
