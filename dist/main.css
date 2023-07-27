@@ -243,7 +243,7 @@ header nav a:hover svg {
 #suggest-list li {
   background: hsla(340deg, 80%, 55%, 0.7);
   color: hsl(240deg, 90%, 80%);
-  font: 400 13px "Arial", sans-serif;
+  font: 400 13px "IBM Plex Mono", monospace;
   cursor: pointer;
   border-radius: 5%;
   padding: 8px 12px;
