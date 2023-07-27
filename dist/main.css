@@ -241,7 +241,7 @@ header nav a:hover svg {
   gap: 8px;
 }
 #suggest-list li {
-  background: hsla(340deg, 90%, 55%, 0.7);
+  background: hsla(340deg, 80%, 55%, 0.7);
   color: hsl(240deg, 90%, 80%);
   font: 400 13px "Arial", sans-serif;
   cursor: pointer;
