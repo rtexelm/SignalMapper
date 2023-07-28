@@ -40,7 +40,8 @@ class Fetcher {
     if (obj.status === "INVALID") {
       this.license = {
         status: "Invalid",
-        Note: "Sometimes the public FCC data I have collected does not match that of other automated systems. This callsign is one such instance and does not have a current valid record. Try another callsign on the left",
+        note: "Sometimes the public FCC data I have collected does not match that of other automated systems. This callsign is one such instance and does not have a current valid record.",
+        move: "Try another call sign on the left.",
       };
     } else this.license = obj;
   }
@@ -62,6 +63,7 @@ class Fetcher {
         this.objLister(obj[property], dataItem);
       } else {
         dataItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
+        if (property == "move") dataItem.classList.add("invalid");
       }
 
       list.appendChild(dataItem);

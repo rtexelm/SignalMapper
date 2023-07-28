@@ -212,7 +212,7 @@ header nav a:hover svg {
 
 #zipButton {
   background: hsl(270deg, 40%, 30%);
-  color: #EA698B;
+  color: #ea698b;
   border-radius: 10%;
   margin-left: 10px;
   padding: 6px 10px;
@@ -256,6 +256,10 @@ header nav a:hover svg {
 #suggest-list li:active {
   transform: scale(0.98);
   box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.23);
+}
+
+.invalid {
+  color: brown;
 }
 
 section#mapPopup {
