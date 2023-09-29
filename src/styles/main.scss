@@ -205,13 +205,13 @@ section#mapPopup {
     z-index: 1000;
     grid-row-start: 2;
     grid-row-end: 3;
-    grid-column-start: 4;
+    grid-column-start: 3;
     grid-column-end: 8;
   }
   #licenseData {
     width: 0px;
     overflow-y: auto;
-    font-family: $primary-type, sans-serif;
+    font-family: $sans-type, sans-serif;
     overflow-x: hidden;
     overflow-y: auto;
     padding-left: 3px;
@@ -220,7 +220,7 @@ section#mapPopup {
       width: 100%;
       height: 100%;
       font-size: 80%;
-      background-color: #24348f99;
+      background-color: #0f153999;
       border: 0.2rem solid #09072a;
       border-radius: 3px;
       scrollbar-width: thin;
