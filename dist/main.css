@@ -325,7 +325,7 @@ section#mapPopup #dataContainer {
 section#mapPopup #licenseData {
   width: 0px;
   overflow-y: auto;
-  font-family: "Racing Sans One", sans-serif, sans-serif;
+  font-family: "Arial", sans-serif, sans-serif;
   overflow-x: hidden;
   overflow-y: auto;
   padding-left: 3px;
