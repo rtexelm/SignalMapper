@@ -1,5 +1,7 @@
 # Signal Mapper
 
+[Live Site](https://rtexelm.github.io/SignalMapper/)
+
 Signal Mapper is a visualization of amateur radio license locations in the state of New York grouped by zipcode. Each license is represented by its current holder's registered callsign. These callsigns are unique indentifiers provided by the Federal Communications Commission. The initial state is a map centered on New York City. After providing a valid zipcode from New York state a list of callsigns is dynamically generated to the left of the map. Each callsign is clickable resulting in its registered license location to be plotted and focused via animation onto the map. Concurrently a small window animates onto the map area displaying any relevant data available to the license received from a http request made to the callook.info API.
 
 ## Functionality and MVPs
@@ -12,18 +14,20 @@ In Signal Mapper, users are able to:
 
 - Choose a callsign by clicking on the list initiating an async request to the external API for a data object related to the specific callsign.
 
-    ```js
-      fetch(`https://callook.info/${this.csString}/json`)
-      .then(res => {
-        if (res.ok) {
-          return res.json();
-        } else {
-          throw res;
-        }
-      })
-      .then(data => {
-        console.log(data);
-      .catch(error => console.error(error));
+  ```js
+    fetch(`https://callook.info/${this.csString}/json`)
+    .then(res => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw res;
+      }
+    })
+    .then(data => {
+      console.log(data);
+    .catch(error => console.error(error));
+
+  ```
 
 - The data object is unpacked and rendered as an HTML list.
 
@@ -42,7 +46,7 @@ In Signal Mapper, users are able to:
       } else {
         dataItem.innerHTML = `${titleize(property)}: ${obj[property]}`;
         }
-        
+
       list.appendChild(dataItem);
     }
   }
@@ -58,15 +62,18 @@ In Signal Mapper, users are able to:
     node.append(subList);
   }
 
+  ```
+
 - Geographic coordinates from the data are used to create and focus via animation onto the map.
 
   ```js
   this.setLicense(data);
   this.createDataSection(this.license);
-  let loc = this.snatchCoordz(this.license)
+  let loc = this.snatchCoordz(this.license);
   let marker = L.marker(loc).addTo(map);
   marker.bindPopup(this.csString).openPopup();
   map.flyTo(marker.getLatLng());
+  ```
 
 - The data window is animated onto the map area displaying data for the last-clicked callsign.
 
